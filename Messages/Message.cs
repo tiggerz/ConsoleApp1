@@ -6,7 +6,7 @@ namespace Messages
 {
     public class Message
     {
-        public Message(int id,string name,DateTime createdDate)
+        public Message(int id, string name, DateTime createdDate)
         {
             Id = id;
             Name = name;

@@ -18,7 +18,7 @@ namespace SendMessage
             });
             bus.Start();
 
-            await bus.Publish(new Message(1, "สวัสดีเสือออออ", DateTime.Now));
+            await bus.Publish(new Message(1, "Hello Tigger !!", DateTime.Now));
 
             Console.WriteLine("Press any key to exit");
             Console.ReadKey();

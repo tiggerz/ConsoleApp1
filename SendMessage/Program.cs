@@ -18,7 +18,10 @@ namespace SendMessage
             });
             bus.Start();
 
-            await bus.Publish(new Message(1, "สวัสดีเสือออออ", DateTime.Now));
+            //await bus.Publish(new Message(1, "I'll be in touch !!", DateTime.Now));
+            
+            var sendEndpoint = await bus.GetSendEndpoint(new Uri("rabbitmq://localhost/new_queue"));
+            await sendEndpoint.Send(new Message(1, "Private Message to new_queue Only", DateTime.Now));
 
             Console.WriteLine("Press any key to exit");
             Console.ReadKey();
